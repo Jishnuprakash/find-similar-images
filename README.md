@@ -5,5 +5,5 @@ I have used Pytorch resnet18 pre-trained model for extracting features from imag
 
 Similarity is found using cosine similarity between query image and images from our pc (imagedb)
 
-![Query Image]('https://github.com/Jishnuprakash/reverse_image_search/blob/main/query.png')
-![Results]('https://github.com/Jishnuprakash/reverse_image_search/blob/main/results.png')
+![Query Image]('https://github.com/Jishnuprakash/reverse_image_search/blob/main/query.png?raw=true')
+![Results]('https://github.com/Jishnuprakash/reverse_image_search/blob/main/results.png?raw=true')
