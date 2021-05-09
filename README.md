@@ -7,4 +7,5 @@ Similarity is found using cosine similarity between query image and images from 
 
 ![](https://github.com/Jishnuprakash/reverse_image_search/blob/main/query.png)
 
-![Results]('https://github.com/Jishnuprakash/reverse_image_search/blob/main/results.png?raw=true')
+![](https://github.com/Jishnuprakash/reverse_image_search/blob/main/results.png)
+
