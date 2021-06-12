@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torchvision.models as models
 import torchvision.transforms as transforms
-import _models.load_model as m
+import model.load_model as m
 
 def img2vec(imagePath, cuda = False):
     """

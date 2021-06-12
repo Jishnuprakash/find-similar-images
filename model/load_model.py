@@ -1,7 +1,7 @@
 import os
-import _models.model_pt_architecture as tm
+import model.model_pt_architecture as tm
 
-service_path = "_models"
+service_path = "model"
 
 def model_pt_res18():
     """

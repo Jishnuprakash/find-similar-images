@@ -1,16 +1,17 @@
-# reverse_image_search
+# Find similar images
+
 Find similar images from your local machine using deep learning
 
-Use "env.txt" to build the environment. (find run command inside)
+Use "help/env.txt" to build the environment. (find run command inside)
 
-I have used Pytorch resnet18 pre-trained model for extracting features from image.
+I have used Pytorch `resnet18` pre-trained model for extracting features from image.
 
 Similarity is found using cosine similarity between query image and images from our pc (imagedb)
 
 - Query Image
-![](https://github.com/Jishnuprakash/reverse_image_search/blob/main/query.png)
+![](https://github.com/Jishnuprakash/find-image-search/blob/main/test-01.png)
 
 - Results
-![](https://github.com/Jishnuprakash/reverse_image_search/blob/main/results.png)
+![](https://github.com/Jishnuprakash/find-image-search/blob/main/output.png)
 
-Please run revere_image_search.py
+Please run example.py

@@ -202,14 +202,12 @@ class ResNet(nn.Module):
     def forward(self, x):
         return self._forward_impl(x)
 
-
 def _resnet(arch, block, layers, pretrained, progress,modelPath, **kwargs):
     model = ResNet(block, layers, **kwargs)
     if pretrained:
         state_dict = torch.load(modelPath)
         model.load_state_dict(state_dict)
     return model
-
 
 def resnet18(pretrained=True,modelPath=None, progress=True, **kwargs):
     r"""ResNet-18 model from
@@ -221,6 +219,5 @@ def resnet18(pretrained=True,modelPath=None, progress=True, **kwargs):
     return _resnet('resnet18', BasicBlock, [2, 2, 2, 2], pretrained, progress,modelPath,
                    **kwargs)
 #model = resnet18()
-
 #torch.save(model, 'resnet18.pt')
 #torch.load('resnet18.pt')
