@@ -1,23 +1,22 @@
-# Imports
-import os
+# ==== Initialisation ====
 import pandas as pd
-import py.img_operations as img
+import py.similarity as sm
 
-# Load image database
-df = pd.read_pickle('data/img_db.pkl')
-df.head()
+# ==== Load image database ====
+db = pd.read_pickle('data/db.pkl')
+db.head()
 
-# Load test image
+# ==== Load test image ====
 test_image = "data/test/test-01.jpg"
-feature = img.img2vec(test_image)
+feature = sm.feature_extraction(test_image)
 feature.shape
 
 # Find cosine similarity of the test image with the whole image db
-df['match'] = df.feature.apply(lambda x: img.cos_sim(feature,x))
-df.describe()
-df = df.sort_values(by=['match'], ascending=False).reset_index(drop=True) # Sort values
-top = df.head(6) # Select top results
+db['similarity'] = db.feature.apply(lambda x: sm.similarity(feature, x))
+db.describe()
+db = db.sort_values(by=['similarity'], ascending=False).reset_index(drop=True)  # Sort values
+top = db.head(6)  # Select top results
 
 # Show Results
-img.show_images([test_image], ['test Image'])
-img.show_images(images=top['imagePath'], titles=top['match'].astype(str)+" %", cols=3)
+sm.show_images([test_image], add_titles=['test Image'])
+sm.show_images(top['file'], cols=3, add_titles=top['similarity'].astype(str) + " %")
