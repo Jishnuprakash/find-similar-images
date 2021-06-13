@@ -8,15 +8,23 @@ db.head()
 
 # ==== Load test image ====
 test_image = "data/test/test-01.jpg"
+sm.show_images([test_image], add_titles=['test Image'])
+
+# Extract it's features ====
 feature = sm.feature_extraction(test_image)
 feature.shape
 
-# Find cosine similarity of the test image with the whole image db
+# ==== Calculate cosine similarity of the test image with images in db ====
 db['similarity'] = db.feature.apply(lambda x: sm.similarity(feature, x))
 db.describe()
-db = db.sort_values(by=['similarity'], ascending=False).reset_index(drop=True)  # Sort values
-top = db.head(6)  # Select top results
+
+# ==== Find top matches ====
+threshold = 90  # defining a threshold value
+top_n = 3
+output = db.loc[db.similarity >= threshold]
+output = output.sort_values(by=['similarity'], ascending=False).reset_index(drop=True)  # Sort values
+output = output.head(top_n)  # Select top results
 
 # Show Results
-sm.show_images([test_image], add_titles=['test Image'])
-sm.show_images(top['file'], cols=3, add_titles=top['similarity'].astype(str) + " %")
+n_cols = min(3, output.shape[0])
+sm.show_images(output['file'], cols=n_cols, add_titles=output['similarity'].astype(str) + " %")
