@@ -1,5 +1,4 @@
 # Imports
-import os
 import pandas as pd
 import py.img_operations as img
 
