@@ -9,9 +9,9 @@ I have used Pytorch `resnet18` pre-trained model for extracting features from im
 Similarity is found using cosine similarity between query image and images from our pc (imagedb)
 
 - Query Image
-![](https://github.com/Jishnuprakash/find-image-search/blob/main/test-01.png)
+![](https://github.com/Jishnuprakash/find-similar-images/blob/main/help/test_image.png)
 
 - Results
-![](https://github.com/Jishnuprakash/find-image-search/blob/main/output.png)
+![](https://github.com/Jishnuprakash/find-similar-images/blob/main/help/results.png)
 
 Please run example.py
