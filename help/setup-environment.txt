@@ -1,6 +1,3 @@
-# This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
-# platform: win-64
 @EXPLICIT
 https://repo.anaconda.com/pkgs/main/win-64/_pytorch_select-1.1.0-cpu.tar.bz2
 https://repo.anaconda.com/pkgs/main/win-64/_tflow_select-2.3.0-mkl.tar.bz2
